@@ -1,0 +1,6 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "exec": "node -r dotenv/config src/app.js"
+}
