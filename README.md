@@ -1,6 +1,14 @@
 # Conversion Rate
 
-This is a Node.js web service that provides currency conversion rates.
+[![Docker Pulls](https://img.shields.io/docker/pulls/ismyrnow/conversion-rate.svg)](https://hub.docker.com/r/ismyrnow/conversion-rate/)
+
+This is a Node.js web service that provides currency conversion rates to or from USD.
+
+The service is currently available free to use on http://currency.ish.lol
+
+```
+curl -X GET "http://currency.ish.lol/rate?from=USD&to=EUR"
+```
 
 ## Project Structure
 
@@ -60,16 +68,27 @@ npm start
 
 Make sure to set the NODE_ENV environment variable to production when running in production mode.
 
+## With Docker
+
+```
+docker pull ismyrnow/conversion-rate:latest
+docker run -p 3000:3000 -e API_KEY=your-api-key ismyrnow/conversion-rate:latest
+```
+
 ### Environment Variables
 
-API_KEY: Your API key for the [currency conversion](https://freecurrencyapi.com/) API.
-PORT: The port on which the server will run (default is 3000).
-DEBUB: (optional) use "exchange-rates" to get additional information on conversion rate API usage.
+- API_KEY: Your API key for the [currency conversion](https://freecurrencyapi.com/) API.
+- PORT: The port on which the server will run (default is 3000).
+- DEBUG: (optional) use "exchange-rates" to get additional information on conversion rate API usage.
 
 
 ## Endpoint
 
 ### GET /rate
+
+Returns the conversation rate between two currencies. Currently only supports converting to or from USD.
+
+Exchange rates are updated only once per day.
 
 Query Parameters:
 - `from`: The currency code to convert from.
