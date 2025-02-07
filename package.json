@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon src/app.js",
-    "build:css": "npx @tailwindcss/cli -i ./public/styles.css -o ./public/styles.css"
+    "build:css": "npx @tailwindcss/cli -i ./public/tw.css -o ./public/styles.css"
   },
   "dependencies": {
     "debug": "^4.4.0",
