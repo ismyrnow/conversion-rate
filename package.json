@@ -5,8 +5,8 @@
   "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "nodemon src/app.js",
+    "build:css": "npx @tailwindcss/cli -i ./public/styles.css -o ./public/styles.css"
   },
   "dependencies": {
     "debug": "^4.4.0",
@@ -17,7 +17,9 @@
   "author": "Ishmael Smyrnow",
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/cli": "^4.0.4",
     "dotenv": "^16.4.7",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "tailwindcss": "^4.0.4"
   }
 }
